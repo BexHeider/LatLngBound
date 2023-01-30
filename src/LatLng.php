@@ -20,17 +20,16 @@ class LatLng {
         );
 
         if ($this->_latitude < -90 || $this->_latitude > 90) {
-          //throw new InvalidArgumentException('Latitude must be between -90 and 90 degrees');
+          throw new Exception('Latitude must be between -90 and 90 degrees');
         } else if ($this->_longitude < -180 || $this->_longitude > 180) {
-          //throw new InvalidArgumentException('Longitude must be between -180 and 180 degrees');
+          throw new Exception('Longitude must be between -180 and 180 degrees');
         }
           
     }
 
     public function setLatitude($value) {
       if ($value < -90 || $value > 90) {
-        return 'Latitude must be between -90 and 90 degrees';
-        //throw new InvalidArgumentException('Latitude must be between -90 and 90 degrees');
+        throw new Exception('Latitude must be between -90 and 90 degrees');
       }
       $this->_latitude = $value;
     }
@@ -41,8 +40,7 @@ class LatLng {
 
     public function setLongitude($value){
       if ($value < -180 || $value > 180) {
-        // throw new InvalidArgumentException('Longitude must be between -180 and 180 degrees');
-        return 'Longitude must be between -180 and 180 degrees';
+        throw new Exception('Longitude must be between -180 and 180 degrees');
       }
       $this->_longitude = $longitude;
     }
